@@ -1,61 +1,35 @@
 ---
-interface Props {
-	title: string;
-	body: string;
-	href: string;
-}
+import type { CourseDetails } from "@/types";
+import { Icon } from "astro-icon/components";
 
-const { href, title, body } = Astro.props;
+interface Props extends CourseDetails {}
+
+const { name, iconName, certificateURL } = Astro.props;
+
+const colorClasses = {
+  bash: "group-hover:text-react",
+  database: "group-hover:text-database",
+  git: "group-hover:text-git",
+  java: "group-hover:text-java",
+  javascript: "group-hover:text-javascript",
+  linux: "group-hover:text-linux",
+  nodejs: "group-hover:text-nodejs",
+  python: "group-hover:text-python",
+  react: "group-hover:text-react",
+  vuejs: "group-hover:text-vuejs",
+};
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
-<style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
-</style>
+<a
+  href={certificateURL}
+  rel="noreferrer noopener"
+  class="h-32 p-5 bg-gray-100/40 border border-gray-300 rounded-xl shadow-md transform transition-all duration-200 ease-in hover:bg-white hover:shadow-lg hover:scale-105 group"
+>
+  <div class="grid gap-5">
+    <div class="flex items-center justify-between">
+      <Icon name={iconName} class:list={colorClasses[`${iconName}`]} />
+      <Icon name="link" class="transition-colors group-hover:text-sky-500" />
+    </div>
+    <h4 class="text-sm">{name}</h4>
+  </div>
+</a>

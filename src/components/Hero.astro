@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+import SocialPill from "./SocialPill.astro";
+---
+
+<section
+  class="w-full space-y-14 mx-auto container py-10 md:max-w-2xl lg:max-w-6xl"
+>
+  <div class="flex flex-col items-center gap-2">
+    <img
+      class="size-20 p-0.5 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+      src="https://daldev.vercel.app/daldev.webp"
+      alt="Daniel Amaya"
+    />
+    <h2 class="font-semibold text-xl">Daniel André Amaya López</h2>
+
+    <nav class="flex flex-wrap justify-center items-center gap-4">
+      <SocialPill href="mailto:damayalop@gmail.com">
+        <Icon name="mail" class="size-4" />
+        damayalop@gmail.com
+      </SocialPill>
+
+      <SocialPill href="https://linkedin.com/in/danielamayal">
+        <Icon name="linkedin" class="size-4" />
+        LinkedIn
+      </SocialPill>
+
+      <SocialPill href="https://github.com/daldev14">
+        <Icon name="github" class="size-4" />
+        GitHub
+      </SocialPill>
+    </nav>
+  </div>
+
+  <div class="space-y-4">
+    <h1 class="text-center sm:text-lg">
+      <span
+        class="bg-gradient-to-r from-coursera to-uth inline-block text-transparent bg-clip-text text-4xl sm:text-5xl font-bold"
+        >PROGRAMATE</span
+      >
+      <br />
+      Curso Desarrollador FullStack
+    </h1>
+
+    <div
+      class="flex justify-center items-center flex-col gap-4 md:flex-row md:gap-5"
+    >
+      <img src="./usaid.webp" alt="USAID" class="aspect-[100/93]" width="100" />
+      <img src="./uth.png" alt="UTH" class="aspect-[200/55]" width="200" />
+      <img
+        src="./coursera.svg"
+        alt="COURSERA FOR GOVERNMENT"
+        class="aspect-[200/90]"
+        width="200"
+      />
+    </div>
+  </div>
+</section>
