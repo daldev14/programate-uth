@@ -1,10 +1,11 @@
 ---
 import { Icon } from "astro-icon/components";
 import SocialPill from "./SocialPill.astro";
+import HoverImage from "./HoverImage.astro";
 ---
 
 <section
-  class="w-full space-y-14 mx-auto container py-10 md:max-w-2xl lg:max-w-6xl"
+  class="w-full flex flex-col items-center space-y-14 mx-auto container py-10 md:max-w-2xl lg:max-w-6xl"
 >
   <div class="flex flex-col items-center gap-2">
     <img
@@ -12,6 +13,7 @@ import SocialPill from "./SocialPill.astro";
       src="https://daldev.vercel.app/daldev.webp"
       alt="Daniel Amaya"
     />
+
     <h2 class="font-semibold text-xl">Daniel André Amaya López</h2>
 
     <nav class="flex flex-wrap justify-center items-center gap-4">
@@ -47,17 +49,6 @@ import SocialPill from "./SocialPill.astro";
       Curso Desarrollador FullStack
     </h1>
 
-    <div
-      class="flex justify-center items-center flex-col gap-4 md:flex-row md:gap-5"
-    >
-      <img src="./usaid.webp" alt="USAID" class="aspect-[100/93]" width="100" />
-      <img src="./uth.png" alt="UTH" class="aspect-[200/55]" width="200" />
-      <img
-        src="./coursera.svg"
-        alt="COURSERA FOR GOVERNMENT"
-        class="aspect-[200/90]"
-        width="200"
-      />
-    </div>
+    <HoverImage src="./certificado.webp" alt="Certificado PROGRAMATE" />
   </div>
 </section>
